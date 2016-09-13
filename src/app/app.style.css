@@ -1,0 +1,102 @@
+html {
+  height: 100%;
+}
+
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+/**
+ * Layout
+ */
+#headWrapper {
+}
+
+/* overriding top navbar styles */
+#headWrapper nav {
+  height: 90px;
+  line-height: 90px;
+}
+
+#headWrapper nav .brand-logo {
+  margin-left: 20px;
+  margin-top: 9px; /* @todo auto vertically align */
+  font-size: 1.6rem;
+}
+
+#moduleNav {
+  margin-right: 20px;
+}
+
+#timelineWrapper {
+  height: 100px;
+}
+
+#mainInfosWrapper {
+  height: 50px;
+  border-bottom: 1px solid silver;
+}
+
+#mainInfosWrapper .col {
+  border-right: 1px solid silver;
+  height: 100%;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+#mainInfosWrapper .col:last-child {
+  border-right: 0;
+}
+
+/**
+ * Set main content height so that it fits on tablet device (768px height)
+ * Child element must have height: 100%
+ */
+#mainContent {
+  min-width: 1280px;
+  margin: 0;
+}
+
+/** Padding around main content only on desktop */
+@media only screen and (min-width: 992px) {
+  #mainContent {
+    padding: 0 10px;
+    max-width: 1280px;
+  }
+}
+
+/**
+ * Utility classes
+ */
+.full-height {
+  height: 100%;
+}
+
+span.active {
+  background-color: gray;
+}
+
+/**
+ * Override materialize
+ */
+/* label focus color */
+.input-field input:focus + label, .input-field textarea:focus + label {
+  color: #ff9800 !important;
+}
+/* label underline focus color */
+.row .input-field input:focus, .row .input-field textarea:focus {
+  border-bottom: 1px solid #ff9800 !important;
+  box-shadow: 0 1px 0 0 #ff9800 !important
+}
+/* Table */
+table.highlight > tbody > tr:hover, table.highlight > tbody > tr.selected {
+  background-color: #f5f5f5;
+}

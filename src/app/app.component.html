@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<div class="page-flexbox-wrapper">
+    <prop-header *ngIf="displayLayout" class="grey lighten-3"></prop-header>
+    <main class="grey lighten-3">
+        <div id="mainContent">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+    <prop-footer *ngIf="displayLayout"></prop-footer>
+</div>

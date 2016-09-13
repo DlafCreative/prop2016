@@ -1,0 +1,45 @@
+<div class="card" [@inflateIn]>
+    <div class="card-content">
+        <span class="card-title">Mission N° {{ mission.id }}</span>
+    </div>
+    <div class="card-action">
+        <div class="row">
+            <div class="col s6">N° de dossier :</div>
+            <div class="col s6">{{ mission.claimFolder_id }}</div>
+        </div>
+        <div class="row">
+            <div class="col s6">Date de création :</div>
+            <div class="col s6">01/7/2016</div>
+        </div>
+        <div class="row">
+            <div class="col s6">Description</div>
+            <div class="col s6">{{ mission.description }}</div>
+        </div>
+        <div class="section">
+            <a materialize="leanModal" [materializeParams]="[{dismissible: false}]" class="waves-effect waves-light btn modal-trigger blue" href="#missionAccept">
+                <i class="material-icons left">check</i>Accepter
+            </a>
+            <button class="btn waves-effect waves-light red">
+                <i class="material-icons left">clear</i>Refuser
+            </button>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <a class="btn waves-effect waves-light orange" [routerLink]="['./rik/mission', mission.id]">
+                <i class="material-icons left">zoom_in</i>+ d'infos
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Modal Trigger -->
+
+<!-- Modal Structure -->
+<div id="missionAccept" class="modal">
+    <div class="modal-content">
+        <h4>Mission confirmée</h4>
+        <p>Nous prévenons l'assuré de votre passage à la date indiquée</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Compris</a>
+    </div>
+</div>

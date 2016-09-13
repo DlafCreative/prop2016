@@ -1,0 +1,43 @@
+<div id="missionDetailWrapper" class="white z-depth-1">
+    <h3 class="center-align">Détails de la mission</h3>
+    <div class="row">
+        <div class="col s4">N° de dossier :</div>
+        <div class="col s6">{{ mission.claimFolder_id }}</div>
+    </div>
+    <div class="row">
+        <div class="col s4">Date de création :</div>
+        <div class="col s6">01/7/2016</div>
+    </div>
+    <div class="row">
+        <div class="col s4">Description</div>
+        <div class="col s6">{{ mission.description }}</div>
+    </div>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1"><i class="petite material-icons">mode_edit</i>Ajouter une note</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="section" id="buttonWrapper" class="center-align">
+        <button materialize="leanModal" class="waves-effect waves-light btn modal-trigger blue" data-target="missionAccept">
+            <i class="material-icons left">check</i>Accepter
+        </button>
+        <button class="btn waves-effect waves-light red" (click)="goBack()">
+            <i class="material-icons left">clear</i>Refuser
+        </button>
+    </div>
+</div>
+<!-- Modal Structure -->
+<div id="missionAccept" class="modal">
+    <div class="modal-content">
+        <h4>Mission confirmée</h4>
+        <p>Nous prévenons l'assuré de votre passage à la date indiquée</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Compris</a>
+    </div>
+</div>

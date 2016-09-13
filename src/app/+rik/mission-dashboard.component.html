@@ -1,0 +1,35 @@
+<div class="action-buttons">
+    <button class="btn waves-effect waves-light orange">
+        <i class="material-icons left"><i class="material-icons">create_new_folder</i></i>Create mission
+    </button>
+    <button class="btn waves-effect waves-light white grey-text">
+        <i class="material-icons left"><i class="material-icons">create_new_folder</i></i>Filter list
+    </button>
+</div>
+<div class="row full-height">
+    <div class="col l8 entity__list">
+        <table class="highlight white z-depth-1">
+            <thead>
+            <tr>
+                <th>Claimfile number</th>
+                <th>Mission number</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let entity of entities;" (click)="showEntityCard(entity)" [class.selected]="isSelected(entity)">
+                <td>{{ entity.claimFolder_id }}</td>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.description }}</td>
+                <td>01/07/2016</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="entity__detail col l4 center-align">
+        <span *ngIf="!selectedEntity">Please select an element in the list</span>
+        <mission-card *ngIf="selectedEntity" [mission]="selectedEntity">
+        </mission-card>
+    </div>
+</div>
